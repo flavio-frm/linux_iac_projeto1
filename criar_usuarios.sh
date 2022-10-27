@@ -2,25 +2,33 @@
 
 echo "Script Gerenciamento de Usuarios"
 echo "Esses script irá criar os usuarios e inseri-los em seus devidos grupos"
+echo "" 
 
 echo "-------------------------------"
 # Criando as pastas dos usuarios
 #
+echo ""
 echo "**** Criando Pastas ****"
 cd /
 mkdir /publico /adm /ven /sec
-
+echo "" 
+echo "**** Pastas OK ****"
+echo ""
 echo "-------------------------------"
 # Criando os grupos de usuarios
 #
+echo ""
 echo "**** Criando Grupos ****"
 groupadd GRP_ADM
 groupadd GRP_VEN
 groupadd GRP_SEC
-
+echo "" 
+echo "**** Grupos OK ****"
+echo ""
 echo "-------------------------------"
 # Criando os usuarios
 #
+echo ""
 echo "**** Criando Usuarios ****"
 
 useradd carlos -c "Carlos Fulano" -m -s /bin/bash -p $(openssl passwd -1 senha123) -G GRP_ADM
@@ -54,9 +62,13 @@ passwd amanda -e
 useradd rogerio -c "Rogerio Fulano" -m -s /bin/bash -p $(openssl passwd -1 senha123) -G GRP_SEC
 passwd rogerio -e
 
+echo "" 
+echo "**** Usuarios OK ****"
+echo ""
 echo "-------------------------------"
 # aplicando permissões
 #
+echo ""
 echo "**** Aplicando Permissões ****"
 
 cd /
@@ -71,11 +83,19 @@ chmod 770 /ven
 chown root:GRP_SEC /sec
 chmod 770 /sec
 
+echo "" 
+echo "**** Permissões OK ****"
+echo ""
+echo "--------------------------------"
+echo ""
 echo "**** Script finalizado ****"
-
-echo "os usuarios foram criados e devem alterar sua senha no 1º logon"
-echo "senha padrão dos usuarios criados é:"
-echo "senha123"
+echo "" 
+echo "-----------------------------------------------------------------"
+echo "|os usuarios foram criados e devem alterar sua senha no 1º logon|"
+echo "|senha padrão dos usuarios criados é: senha123                  |"
+echo "-----------------------------------------------------------------"
+echo ""
+echo ""
 
 
 
