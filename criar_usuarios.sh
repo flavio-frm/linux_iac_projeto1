@@ -14,7 +14,9 @@ echo "-------------------------------"
 # Criando os grupos de usuarios
 #
 echo "**** Criando Grupos ****"
-groupadd GRP_ADM GRP_VEN GRP_SEC
+groupadd GRP_ADM
+groupadd GRP_VEN
+groupadd GRP_SEC
 
 echo "-------------------------------"
 # Criando os usuarios
